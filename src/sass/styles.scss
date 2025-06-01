@@ -20,3 +20,18 @@ body {
 	color: $grey-500;
 	background: $grey-50;
 }
+
+h2 {
+	font-size: $text-13;
+	font-weight: $font-semibold;
+}
+
+h3 {
+	font-size: $text-20;
+	font-weight: $font-semibold;
+}
+
+span {
+	font-size: $text-12;
+	letter-spacing: -0.4px;
+}
