@@ -61,6 +61,7 @@ article {
 	border-radius: $radius-8;
 	position: relative;
 	isolation: isolate;
+	box-shadow: $box-shadow;
 
 	&:nth-child(1)::before {
 		content: '';
@@ -162,4 +163,51 @@ blockquote p::before {
 
 blockquote p::after {
 	content: '\201D';
+}
+
+// Theme
+
+.theme-toggle {
+	display: flex;
+	background-color: $white;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: $s-24;
+	padding: $s-14;
+	border-radius: 50%;
+	z-index: 1;
+	box-shadow: $box-shadow-theme;
+}
+
+.theme-toggle__around {
+	width: $width-32;
+	height: $width-32;
+}
+
+.dark-theme {
+	background: $dark-blue;
+	color: $white;
+
+	article {
+		background-color: $purple-500;
+		color: $white;
+		box-shadow: none;
+
+		&:nth-child(2),
+		&:nth-child(4) {
+			background-color: $grey-500;
+			color: $white;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	body {
+		transition: background-color 0.3s ease, color 0.3s ease-in-out;
+	}
+
+	article {
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	}
 }
